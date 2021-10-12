@@ -26,7 +26,7 @@ st.dataframe(aecom_financial)
 
 financial_df = pd.DataFrame()
 financial_df['Company'] = company_ls
-financial_df['Revenue'] =  [aecom_financial.loc['Total Revenue'][0],wsp_financial.loc['Total Revenue'][0],snc_financial.loc['Total Revenue'][0],wbd_financial.loc['Total Revenue'][0],jacob_financial.loc['Total Revenue'][0],flr_financial.loc['Total Revenue'][0],eme_financial.loc['Total Revenue'][0]],mtz_financial.loc['Total Revenue'][0]]
+financial_df['Revenue'] =  [aecom_financial.loc['Total Revenue'][0],wsp_financial.loc['Total Revenue'][0],snc_financial.loc['Total Revenue'][0],wbd_financial.loc['Total Revenue'][0],jacob_financial.loc['Total Revenue'][0],flr_financial.loc['Total Revenue'][0],eme_financial.loc['Total Revenue'][0],mtz_financial.loc['Total Revenue'][0]]
 financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
                             wsp_financial.loc['Total Operating Expenses'][0],
                             snc_financial.loc['Total Operating Expenses'][0],
