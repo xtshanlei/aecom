@@ -37,8 +37,23 @@ financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
                             eme_financial.loc['Total Operating Expenses'][0],
                             mtz_financial.loc['Total Operating Expenses'][0]
                             ]
-revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company')
+financial_df['Profit'] = [aecom_financial.loc['Gross Profit'][0],
+                            wsp_financial.loc['Gross Profit'][0],
+                            snc_financial.loc['Gross Profit'][0],
+                            wbd_financial.loc['Gross Profit'][0],
+                            jacob_financial.loc['Gross Profit'][0],
+                            flr_financial.loc['Gross Profit'][0],
+                            eme_financial.loc['Gross Profit'][0],
+                            mtz_financial.loc['Gross Profit'][0]
+                            ]
+
+profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company',orientation='h')
+st.plotly_chart(profit_fig)
+revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company',orientation='h')
 st.plotly_chart(revenue_fig)
+expenses_fig = px.bar(financial_df,x='Company', y='Expenses',labels = {'x':'Companies','y':'Total Expenses'},color='Company',orientation='h')
+st.plotly_chart(expenses_fig)
+
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
 stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'), index = 10)
