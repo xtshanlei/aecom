@@ -9,9 +9,10 @@ st.header('Financials')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ '
 aecom_stock = yf.Tickers(stock_code)
-
+st.sidebar.subheader('Financials')
 st.subheader('Financials')
 st.dataframe(aecom_stock.tickers['ACM'].financials)
+st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
 stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'), index = 9)
 stock_price_df = aecom_stock.history(period=stock_period)
