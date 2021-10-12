@@ -15,7 +15,7 @@ aecom_stock = yf.Tickers(stock_code)
 
 st.subheader('Key Figures')
 @st.cache
-df extract_financial():
+def extract_financial():
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
