@@ -13,8 +13,10 @@ aecom_stock = yf.Tickers(stock_code)
 
 st.subheader('Key Figures')
 st.dataframe(aecom_stock.tickers['ACM'].financials)
-revenue_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
-revenue_fig = px.bar(x=revenue_ls, y=[aecom_stock.tickers['ACM'].financials.loc['Total Revenue'][0],
+company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
+financial_df = pd.DataFrame()
+financial_df['Company'] = company_ls
+financial_df['Revenue'] = [aecom_stock.tickers['ACM'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['WSP.TO'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['SNC.TO'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['WBD.MI'].financials.loc['Total Revenue'][0],
@@ -22,7 +24,17 @@ revenue_fig = px.bar(x=revenue_ls, y=[aecom_stock.tickers['ACM'].financials.loc[
                     aecom_stock.tickers['FLR'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['EME'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['MTZ'].financials.loc['Total Revenue'][0]
-                    ],labels = {'x':'Companies','y':'Total Revenue'},color="size")
+                    ]
+financial_df['Expenses'] = [aecom_stock.tickers['ACM'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['WSP.TO'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['SNC.TO'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['WBD.MI'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['J'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['FLR'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['EME'].financials.loc['Total Operating Expenses'][0],
+                    aecom_stock.tickers['MTZ'].financials.loc['Total Operating Expenses'][0]
+                    ]
+revenue_fig = px.bar(x=company_ls, y=financial_df['Expenses'],labels = {'x':'Companies','y':'Total Revenue'},color="size")
 st.plotly_chart(revenue_fig)
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
