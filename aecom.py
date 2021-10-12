@@ -87,14 +87,9 @@ snc_scaler = MinMaxScaler()
 snc_stock_scale = snc_scaler.fit_transform(stock_price_df['Close']['SNC.TO'].values.reshape(-1,1))
 
 scale_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=aecom_stock_scale,
-              labels={
-                     "x": "Date",
-                     "y": "Close Price"
-
-                 },
-        )
+              labels={ "x": "Date","y": "Close Price"})
 scale_stock_fig.add_scatter(x=stock_price_df.index, y=wsp_stock_scale,mode='lines',name='WSP Global Inc.')
-scale_stock_fig.show()
+st.plotly_chart(scale_stock_fig)
 
 scale_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=snc_stock_scale,
               labels={
