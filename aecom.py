@@ -16,7 +16,9 @@ aecom_stock = yf.Tickers(stock_code)
 st.subheader('Key Figures')
 
 aecom_financial = aecom_stock.tickers['ACM'].financials
+aecom_financial.to_csv('aecom_financial.csv')
 wsp_financial = aecom_stock.tickers['WSP.TO'].financials
+
 snc_financial = aecom_stock.tickers['SNC.TO'].financials
 wbd_financial = aecom_stock.tickers['WBD.MI'].financials
 jacob_financial = aecom_stock.tickers['J'].financials
@@ -75,29 +77,3 @@ if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['EME'], mode='lines',name='EMCOR Group, Inc.')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['MTZ'], mode='lines',name='MasTec, Inc.')
 st.plotly_chart(origin_stock_fig)
-
-
-# Stock price comparison plot (after scaling)
-from sklearn.preprocessing import MinMaxScaler
-aecom_scaler = MinMaxScaler()
-aecom_stock_scale = aecom_scaler.fit_transform(stock_price_df['Close']['ACM'].values.reshape(-1,1))
-wsp_scaler = MinMaxScaler()
-wsp_stock_scale = aecom_scaler.fit_transform(stock_price_df['Close']['WSP.TO'].values.reshape(-1,1))
-snc_scaler = MinMaxScaler()
-snc_stock_scale = snc_scaler.fit_transform(stock_price_df['Close']['SNC.TO'].values.reshape(-1,1))
-
-scale_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=aecom_stock_scale,
-              labels={ "x": "Date","y": "Close Price"})
-scale_stock_fig.add_scatter(x=stock_price_df.index, y=wsp_stock_scale,mode='lines',name='WSP Global Inc.')
-st.plotly_chart(scale_stock_fig)
-
-scale_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=snc_stock_scale,
-              labels={
-                     "x": "Date",
-                     "y": "Close Price"
-
-                 },
-        )
-scale_stock_fig.show()
-
-aecom_stock.sustainability
