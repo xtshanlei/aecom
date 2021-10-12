@@ -5,13 +5,25 @@ import plotly.express as px
 import streamlit as st
 st.sidebar.title('AECOM')
 st.sidebar.write('by Yulei')
+st.title('AECOM Visualisation')
 st.header('Financials')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ '
 aecom_stock = yf.Tickers(stock_code)
-st.sidebar.subheader('Financials')
-st.subheader('Financials')
+
+st.subheader('Key Figures')
 st.dataframe(aecom_stock.tickers['ACM'].financials)
+revenue_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
+revenue_fig = px.bar(x=revenue_ls, y=[aecom_stock.tickers['ACM'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['WSP.TO'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['SNC.TO'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['WBD.MI'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['J'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['FLR'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['EME'].financials.loc['Total Revenue'][0],
+                    aecom_stock.tickers['MTZ'].financials.loc['Total Revenue'][0]
+                    ])
+st.plotly_chart(revenue_fig)
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
 stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'), index = 10)
