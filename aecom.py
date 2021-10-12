@@ -3,6 +3,7 @@
 import yfinance as yf
 import plotly.express as px
 import streamlit as st
+import pandas as pd
 st.sidebar.title('AECOM')
 st.sidebar.write('by Yulei')
 st.title('AECOM Visualisation')
