@@ -22,7 +22,7 @@ revenue_fig = px.bar(x=revenue_ls, y=[aecom_stock.tickers['ACM'].financials.loc[
                     aecom_stock.tickers['FLR'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['EME'].financials.loc['Total Revenue'][0],
                     aecom_stock.tickers['MTZ'].financials.loc['Total Revenue'][0]
-                    ],labels = {'x':'Companies','y':'Total Revenue'})
+                    ],labels = {'x':'Companies','y':'Total Revenue'},color="size")
 st.plotly_chart(revenue_fig)
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
