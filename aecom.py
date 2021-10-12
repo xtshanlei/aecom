@@ -11,7 +11,7 @@ stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ '
 aecom_stock = yf.Tickers(stock_code)
 
 st.subheader('Stock Price')
-stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'))
+stock_period = st.sidebar.selectbox('Please choose the period for stock prices', index=-1,('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'))
 stock_price_df = aecom_stock.history(period=stock_period)
 # Stock price comparison plot (before scaling)
 origin_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=stock_price_df['Close']['ACM'],
