@@ -47,11 +47,11 @@ financial_df['Profit'] = [aecom_financial.loc['Gross Profit'][0],
                             mtz_financial.loc['Gross Profit'][0]
                             ]
 
-profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company',orientation='h')
+profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company')
 st.plotly_chart(profit_fig)
-revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company',orientation='h')
+revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company')
 st.plotly_chart(revenue_fig)
-expenses_fig = px.bar(financial_df,x='Company', y='Expenses',labels = {'x':'Companies','y':'Total Expenses'},color='Company',orientation='h')
+expenses_fig = px.bar(financial_df,x='Company', y='Expenses',labels = {'x':'Companies','y':'Total Expenses'},color='Company')
 st.plotly_chart(expenses_fig)
 
 st.sidebar.subheader('Stock Price')
