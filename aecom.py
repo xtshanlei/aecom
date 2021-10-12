@@ -36,7 +36,7 @@ financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
                             eme_financial.loc['Total Operating Expenses'][0],
                             mtz_financial.loc['Total Operating Expenses'][0]
                             ]
-revenue_fig = px.bar(x=company_ls, y=financial_df['Expenses'],labels = {'x':'Companies','y':'Total Revenue'},color="size")
+revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'})
 st.plotly_chart(revenue_fig)
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
