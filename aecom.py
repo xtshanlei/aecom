@@ -50,7 +50,8 @@ def get_financial_item(item):
                                 mtz_financial.loc[item][0]
                                 ]
     return financial_df
-st.sidebar.subheader('Financials')
+st.sidebar.header('Financials')
+st.sidebar.subheader('Key Figures')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
        'Selling General Administrative', 'Gross Profit', 'Ebit',
@@ -62,6 +63,7 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Net Income Applicable To Common Shares'),index=15)
 
 financial_df = get_financial(item)
+st.markdown('**{}**'.format(item)+'  **{}**'.format(financial_df[financial_df['Company']=='AECOM'][item]))
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
