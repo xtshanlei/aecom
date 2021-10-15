@@ -25,6 +25,7 @@ def get_financial(item):
     mtz_financial = aecom_stock.tickers['MTZ'].financials
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
+
     financial_df[item] = [aecom_financial.loc[item][0],
                                 wsp_financial.loc[item][0],
                                 snc_financial.loc[item][0],
@@ -36,7 +37,19 @@ def get_financial(item):
                                 ]
 
     return financial_df
-
+def get_financial_item(item):
+    financial_df = pd.DataFrame()
+    financial_df['Company'] = company_ls
+    financial_df[item] = [aecom_financial.loc[item][0],
+                                wsp_financial.loc[item][0],
+                                snc_financial.loc[item][0],
+                                wbd_financial.loc[item][0],
+                                jacob_financial.loc[item][0],
+                                flr_financial.loc[item][0],
+                                eme_financial.loc[item][0],
+                                mtz_financial.loc[item][0]
+                                ]
+    return financial_df
 
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
@@ -49,7 +62,6 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Net Income Applicable To Common Shares'),index=15)
 
 financial_df = get_financial(item)
-st.success('Extraction completed!')
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
