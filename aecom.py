@@ -5,7 +5,7 @@ import plotly.express as px
 import streamlit as st
 import pandas as pd
 st.sidebar.title('AECOM')
-st.sidebar.write('by Yulei')
+st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Visualisation')
 st.header('Financials')
 # Get stock ticker
@@ -98,3 +98,5 @@ if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['EME'], mode='lines',name='EMCOR Group, Inc.')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['MTZ'], mode='lines',name='MasTec, Inc.')
 st.plotly_chart(origin_stock_fig)
+st.sidebar.header('Social Media: Twitter')
+st.header('Social Media: Twitter')
