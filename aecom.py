@@ -51,7 +51,10 @@ def get_financial_item(item):
                                 ]
     return financial_df
 
-
+def safe_num(num):
+    if isinstance(num, str):
+        num = float(num)
+    return float('{:.3g}'.format(abs(num)))
 def format_number(num):
     num = safe_num(num)
     sign = ''
