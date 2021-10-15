@@ -16,7 +16,6 @@ st.dataframe(pd.read_csv('https://raw.githubusercontent.com/xtshanlei/aecom/main
 st.subheader('Key Figures')
 @st.cache()
 def get_financial():
-    st.info('Extracting financial information, please wait...')
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
@@ -46,10 +45,10 @@ def get_financial():
                                 eme_financial.loc['Gross Profit'][0],
                                 mtz_financial.loc['Gross Profit'][0]
                                 ]
-    st.success('Extraction completed!')
     return financial_df
+st.info('Extracting financial information, please wait...')
 financial_df = get_financial()
-
+st.success('Extraction completed!')
 profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company')
 st.plotly_chart(profit_fig)
 revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company')
