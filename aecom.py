@@ -14,7 +14,7 @@ company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jaco
 aecom_stock = yf.Tickers(stock_code)
 st.subheader('Key Figures')
 @st.cache(suppress_st_warning=True)
-def get_financial(item='Gross Profit'):
+def get_financial(item):
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
@@ -25,25 +25,16 @@ def get_financial(item='Gross Profit'):
     mtz_financial = aecom_stock.tickers['MTZ'].financials
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
-    financial_df['Revenue'] =  [aecom_financial.loc['Total Revenue'][0],wsp_financial.loc['Total Revenue'][0],snc_financial.loc['Total Revenue'][0],wbd_financial.loc['Total Revenue'][0],jacob_financial.loc['Total Revenue'][0],flr_financial.loc['Total Revenue'][0],eme_financial.loc['Total Revenue'][0],mtz_financial.loc['Total Revenue'][0]]
-    financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
-                                wsp_financial.loc['Total Operating Expenses'][0],
-                                snc_financial.loc['Total Operating Expenses'][0],
-                                wbd_financial.loc['Total Operating Expenses'][0],
-                                jacob_financial.loc['Total Operating Expenses'][0],
-                                flr_financial.loc['Total Operating Expenses'][0],
-                                eme_financial.loc['Total Operating Expenses'][0],
-                                mtz_financial.loc['Total Operating Expenses'][0]
+    financial_df[item] = [aecom_financial.loc[item][0],
+                                wsp_financial.loc[item][0],
+                                snc_financial.loc[item][0],
+                                wbd_financial.loc[item][0],
+                                jacob_financial.loc[item][0],
+                                flr_financial.loc[item][0],
+                                eme_financial.loc[item][0],
+                                mtz_financial.loc[item][0]
                                 ]
-    financial_df['Profit'] = [aecom_financial.loc['Gross Profit'][0],
-                                wsp_financial.loc['Gross Profit'][0],
-                                snc_financial.loc['Gross Profit'][0],
-                                wbd_financial.loc['Gross Profit'][0],
-                                jacob_financial.loc['Gross Profit'][0],
-                                flr_financial.loc['Gross Profit'][0],
-                                eme_financial.loc['Gross Profit'][0],
-                                mtz_financial.loc['Gross Profit'][0]
-                                ]
+
     return financial_df
 
 
@@ -55,7 +46,7 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Income Tax Expense', 'Total Revenue', 'Total Operating Expenses',
        'Cost Of Revenue', 'Total Other Income Expense Net',
        'Discontinued Operations', 'Net Income From Continuing Ops',
-       'Net Income Applicable To Common Shares'),index=0)
+       'Net Income Applicable To Common Shares'),index=15)
 
 financial_df = get_financial(item)
 st.success('Extraction completed!')
