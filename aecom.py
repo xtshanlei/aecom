@@ -7,6 +7,7 @@ import pandas as pd
 st.sidebar.title('AECOM')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Visualisation')
+##########Financial related##########
 st.header('Financials')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
@@ -98,5 +99,20 @@ if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['EME'], mode='lines',name='EMCOR Group, Inc.')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['MTZ'], mode='lines',name='MasTec, Inc.')
 st.plotly_chart(origin_stock_fig)
-st.sidebar.header('Social Media: Twitter')
-st.header('Social Media: Twitter')
+##########Twitter related##########
+st.sidebar.header('Twitter')
+st.header('Twitter')
+st.subheader('Twitter Timeline')
+def create_headers(bearer_token): #build HEADERS
+    headers = {"Authorization": "Bearer {}".format(bearer_token)}
+    return headers
+#Get Twiter timeline
+timeline_url = "https://api.twitter.com/2/users/19404869/tweets"
+timeline_params ={'max_results':10, 'tweet.fields':'created_at',}
+def connect_to_endpoint(url, headers, params): #链接ENDPOINT
+    response = requests.request("GET", timeline_url, headers=headers, params=params)
+    if response.status_code != 200:
+        raise Exception(response.status_code, response.text)
+    return response.json()
+timeline_response = connect_to_endpoint(timeline_url,headers=headers,params=timeline_params)
+st.write(timeline_response)
