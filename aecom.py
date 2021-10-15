@@ -50,7 +50,7 @@ def get_financial_item(item):
                                 mtz_financial.loc[item][0]
                                 ]
     return financial_df
-
+st.sidebar.subheader('Financials')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
        'Selling General Administrative', 'Gross Profit', 'Ebit',
