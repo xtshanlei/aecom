@@ -7,10 +7,11 @@ import pandas as pd
 import requests
 import json
 import datetime
-st.image(image='https://dn9tckvz2rpxv.cloudfront.net/aecom/img2/logo.svg')
+
 st.sidebar.title('AECOM Interactive Visualisation')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
+st.image(image='https://dn9tckvz2rpxv.cloudfront.net/aecom/img2/logo.svg')
 ##########Financial related##########
 st.header('Financials')
 # Get stock ticker
