@@ -51,25 +51,14 @@ def get_financial_item(item):
                                 ]
     return financial_df
 
-def safe_num(num):
-    if isinstance(num, str):
-        num = float(num)
-    return float('{:.3g}'.format(abs(num)))
-def format_number(num):
-    num = safe_num(num)
-    sign = ''
+def human_format(num):
+    num = float('{:.3g}'.format(num))
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num /= 1000.0
+    return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
-    metric = {'T': 1000000000000, 'B': 1000000000, 'M': 1000000, 'K': 1000, '': 1}
-
-    for index in metric:
-        num_check = num / metric[index]
-
-        if(num_check >= 1):
-            num = num_check
-            sign = index
-            break
-
-    return f"{str(num).rstrip('0').rstrip('.')}{sign}"
 st.sidebar.header('Financials')
 st.sidebar.subheader('Key Figures')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
@@ -83,7 +72,7 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Net Income Applicable To Common Shares'),index=15)
 
 financial_df = get_financial(item)
-st.markdown('**{}:**'.format(item)+ f"{financial_df[financial_df['Company']=='AECOM'][item].values,}")
+st.markdown('**{}:**'.format(item)+ '**{}**'.format(human_format(financial_df[financial_df['Company']=='AECOM'][item].values))
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
