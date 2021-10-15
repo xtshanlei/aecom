@@ -63,7 +63,7 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Net Income Applicable To Common Shares'),index=15)
 
 financial_df = get_financial(item)
-st.markdown('**{}:**'.format(item)+'  **{}**'.format('%d',financial_df[financial_df['Company']=='AECOM'][item].values),grouping=True)
+st.markdown('**{}:**'.format(item)+'  **{}**'.format('%d',financial_df[financial_df['Company']=='AECOM'][item].values))
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
