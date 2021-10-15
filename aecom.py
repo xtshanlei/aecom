@@ -4,6 +4,8 @@ import yfinance as yf
 import plotly.express as px
 import streamlit as st
 import pandas as pd
+import requests
+import json
 st.sidebar.title('AECOM')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Visualisation')
