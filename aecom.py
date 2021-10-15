@@ -7,9 +7,9 @@ import pandas as pd
 import requests
 import json
 import datetime
-st.sidebar.title('AECOM')
+st.sidebar.title('AECOM Interactive Visualisation')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
-st.title('AECOM Visualisation')
+st.title('AECOM Interactive Visualisation')
 ##########Financial related##########
 st.header('Financials')
 # Get stock ticker
@@ -105,14 +105,14 @@ st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.header('Twitter')
 st.header('Twitter')
-st.subheader('Recent 10 tweets:')
+st.subheader('Recent 5 tweets:')
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
 headers=create_headers(st.secrets['bearer_token'])
 #Get Twiter timeline
 timeline_url = "https://api.twitter.com/2/users/19404869/tweets"
-timeline_params ={'max_results':10, 'tweet.fields':"created_at,public_metrics"}
+timeline_params ={'max_results':5, 'tweet.fields':"created_at,public_metrics"}
 def connect_to_endpoint(url, headers, params): #链接ENDPOINT
     response = requests.request("GET", timeline_url, headers=headers, params=params)
     if response.status_code != 200:
@@ -121,5 +121,6 @@ def connect_to_endpoint(url, headers, params): #链接ENDPOINT
 timeline_response = connect_to_endpoint(timeline_url,headers=headers,params=timeline_params)
 for tweet in timeline_response['data']:
     st.markdown('**@AECOM:**{}'.format(tweet['text']))
-    st.markdown('**Retweets:**{}**  Reply:**{}  **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
+    st.markdown('**Retweets:**{}    **Reply:**{}    **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
     st.write('----------------------------------------')
+# Get topic dynamics
