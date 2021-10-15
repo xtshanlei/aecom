@@ -14,40 +14,41 @@ company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jaco
 aecom_stock = yf.Tickers(stock_code)
 st.dataframe(pd.read_csv('https://raw.githubusercontent.com/xtshanlei/aecom/main/financial.csv'))
 st.subheader('Key Figures')
-
-aecom_financial = aecom_stock.tickers['ACM'].financials
-
-wsp_financial = aecom_stock.tickers['WSP.TO'].financials
-
-snc_financial = aecom_stock.tickers['SNC.TO'].financials
-wbd_financial = aecom_stock.tickers['WBD.MI'].financials
-jacob_financial = aecom_stock.tickers['J'].financials
-flr_financial = aecom_stock.tickers['FLR'].financials
-eme_financial = aecom_stock.tickers['EME'].financials
-mtz_financial = aecom_stock.tickers['MTZ'].financials
-st.dataframe(aecom_financial)
-
-financial_df = pd.DataFrame()
-financial_df['Company'] = company_ls
-financial_df['Revenue'] =  [aecom_financial.loc['Total Revenue'][0],wsp_financial.loc['Total Revenue'][0],snc_financial.loc['Total Revenue'][0],wbd_financial.loc['Total Revenue'][0],jacob_financial.loc['Total Revenue'][0],flr_financial.loc['Total Revenue'][0],eme_financial.loc['Total Revenue'][0],mtz_financial.loc['Total Revenue'][0]]
-financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
-                            wsp_financial.loc['Total Operating Expenses'][0],
-                            snc_financial.loc['Total Operating Expenses'][0],
-                            wbd_financial.loc['Total Operating Expenses'][0],
-                            jacob_financial.loc['Total Operating Expenses'][0],
-                            flr_financial.loc['Total Operating Expenses'][0],
-                            eme_financial.loc['Total Operating Expenses'][0],
-                            mtz_financial.loc['Total Operating Expenses'][0]
-                            ]
-financial_df['Profit'] = [aecom_financial.loc['Gross Profit'][0],
-                            wsp_financial.loc['Gross Profit'][0],
-                            snc_financial.loc['Gross Profit'][0],
-                            wbd_financial.loc['Gross Profit'][0],
-                            jacob_financial.loc['Gross Profit'][0],
-                            flr_financial.loc['Gross Profit'][0],
-                            eme_financial.loc['Gross Profit'][0],
-                            mtz_financial.loc['Gross Profit'][0]
-                            ]
+@st.cache()
+def get_financial():
+    st.info('Extracting financial information, please wait...')
+    aecom_financial = aecom_stock.tickers['ACM'].financials
+    wsp_financial = aecom_stock.tickers['WSP.TO'].financials
+    snc_financial = aecom_stock.tickers['SNC.TO'].financials
+    wbd_financial = aecom_stock.tickers['WBD.MI'].financials
+    jacob_financial = aecom_stock.tickers['J'].financials
+    flr_financial = aecom_stock.tickers['FLR'].financials
+    eme_financial = aecom_stock.tickers['EME'].financials
+    mtz_financial = aecom_stock.tickers['MTZ'].financials
+    financial_df = pd.DataFrame()
+    financial_df['Company'] = company_ls
+    financial_df['Revenue'] =  [aecom_financial.loc['Total Revenue'][0],wsp_financial.loc['Total Revenue'][0],snc_financial.loc['Total Revenue'][0],wbd_financial.loc['Total Revenue'][0],jacob_financial.loc['Total Revenue'][0],flr_financial.loc['Total Revenue'][0],eme_financial.loc['Total Revenue'][0],mtz_financial.loc['Total Revenue'][0]]
+    financial_df['Expenses'] = [aecom_financial.loc['Total Operating Expenses'][0],
+                                wsp_financial.loc['Total Operating Expenses'][0],
+                                snc_financial.loc['Total Operating Expenses'][0],
+                                wbd_financial.loc['Total Operating Expenses'][0],
+                                jacob_financial.loc['Total Operating Expenses'][0],
+                                flr_financial.loc['Total Operating Expenses'][0],
+                                eme_financial.loc['Total Operating Expenses'][0],
+                                mtz_financial.loc['Total Operating Expenses'][0]
+                                ]
+    financial_df['Profit'] = [aecom_financial.loc['Gross Profit'][0],
+                                wsp_financial.loc['Gross Profit'][0],
+                                snc_financial.loc['Gross Profit'][0],
+                                wbd_financial.loc['Gross Profit'][0],
+                                jacob_financial.loc['Gross Profit'][0],
+                                flr_financial.loc['Gross Profit'][0],
+                                eme_financial.loc['Gross Profit'][0],
+                                mtz_financial.loc['Gross Profit'][0]
+                                ]
+    st.success('Extraction completed!')
+    return financial_df
+financial_df = get_financial()
 
 profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company')
 st.plotly_chart(profit_fig)
