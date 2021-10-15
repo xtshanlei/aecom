@@ -122,5 +122,6 @@ timeline_response = connect_to_endpoint(timeline_url,headers=headers,params=time
 st.write(timeline_response)
 for tweet in timeline_response['data']:
     st.markdown('**@AECOM:**{}'.format(tweet['text']))
-    st.markdown('**Date/Time:**{}'.format(tweet['text']))
+    st.markdown('**Date/Time:**{}'.format(tweet['created_at']))
+    st.markdown('**Retweets:**{}**  Reply:**{}  **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
     st.write('----------------------------------------')
