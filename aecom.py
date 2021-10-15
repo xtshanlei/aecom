@@ -106,6 +106,7 @@ st.subheader('Twitter Timeline')
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
+headers=create_headers(bearer_token)
 #Get Twiter timeline
 timeline_url = "https://api.twitter.com/2/users/19404869/tweets"
 timeline_params ={'max_results':10, 'tweet.fields':'created_at',}
