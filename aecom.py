@@ -12,10 +12,9 @@ st.header('Financials')
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
 company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
 aecom_stock = yf.Tickers(stock_code)
-st.dataframe(pd.read_csv('https://raw.githubusercontent.com/xtshanlei/aecom/main/financial.csv'))
 st.subheader('Key Figures')
 @st.cache(suppress_st_warning=True)
-def get_financial():
+def get_financial(item='Gross Profit'):
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
@@ -46,15 +45,23 @@ def get_financial():
                                 mtz_financial.loc['Gross Profit'][0]
                                 ]
     return financial_df
-st.info('Extracting financial information, please wait...')
-financial_df = get_financial()
+
+
+item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
+       'Income Before Tax', 'Minority Interest', 'Net Income',
+       'Selling General Administrative', 'Gross Profit', 'Ebit',
+       'Operating Income', 'Other Operating Expenses', 'Interest Expense',
+       'Extraordinary Items', 'Non Recurring', 'Other Items',
+       'Income Tax Expense', 'Total Revenue', 'Total Operating Expenses',
+       'Cost Of Revenue', 'Total Other Income Expense Net',
+       'Discontinued Operations', 'Net Income From Continuing Ops',
+       'Net Income Applicable To Common Shares'),index=0)
+
+financial_df = get_financial(item)
 st.success('Extraction completed!')
-profit_fig = px.bar(financial_df,x='Company', y='Profit',labels = {'x':'Companies','y':'Gross Profit'},color='Company')
+
+financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(profit_fig)
-revenue_fig = px.bar(financial_df,x='Company', y='Revenue',labels = {'x':'Companies','y':'Total Revenue'},color='Company')
-st.plotly_chart(revenue_fig)
-expenses_fig = px.bar(financial_df,x='Company', y='Expenses',labels = {'x':'Companies','y':'Total Expenses'},color='Company')
-st.plotly_chart(expenses_fig)
 
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
