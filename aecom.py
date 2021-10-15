@@ -112,7 +112,7 @@ def create_headers(bearer_token): #build HEADERS
 headers=create_headers(st.secrets['bearer_token'])
 #Get Twiter timeline
 timeline_url = "https://api.twitter.com/2/users/19404869/tweets"
-timeline_params ={'max_results':10, 'tweet.fields':"'created_at','public_metrics'"}
+timeline_params ={'max_results':10, 'tweet.fields':"created_at,public_metrics"}
 def connect_to_endpoint(url, headers, params): #链接ENDPOINT
     response = requests.request("GET", timeline_url, headers=headers, params=params)
     if response.status_code != 200:
