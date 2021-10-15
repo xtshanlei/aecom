@@ -14,7 +14,7 @@ company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jaco
 aecom_stock = yf.Tickers(stock_code)
 st.dataframe(pd.read_csv('https://raw.githubusercontent.com/xtshanlei/aecom/main/financial.csv'))
 st.subheader('Key Figures')
-@st.cache()
+@st.cache(suppress_st_warning=True)
 def get_financial():
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
