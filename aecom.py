@@ -6,6 +6,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import json
+import datetime
 st.sidebar.title('AECOM')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Visualisation')
@@ -104,7 +105,7 @@ st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.header('Twitter')
 st.header('Twitter')
-st.subheader('Twitter Timeline')
+st.subheader('Recent 10 tweets:')
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
@@ -119,3 +120,6 @@ def connect_to_endpoint(url, headers, params): #链接ENDPOINT
     return response.json()
 timeline_response = connect_to_endpoint(timeline_url,headers=headers,params=timeline_params)
 st.write(timeline_response)
+for tweet in timeline_response['data']:
+    st.markdown('**Tweet:**{}'.format(tweet['text']))
+    st.write('----------------------------------------')
