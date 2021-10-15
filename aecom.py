@@ -52,7 +52,7 @@ financial_df = get_financial(item)
 st.success('Extraction completed!')
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
-st.plotly_chart(profit_fig)
+st.plotly_chart(financial_fig)
 
 st.sidebar.subheader('Stock Price')
 st.subheader('Stock Price')
