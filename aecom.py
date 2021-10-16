@@ -55,6 +55,7 @@ def get_financial(item):
                                 ]
 
     return financial_df
+    
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
