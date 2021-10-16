@@ -42,7 +42,7 @@ with st.spinner('Extracting financial information, please wait...'):
     eme_financial = aecom_stock.tickers['EME'].financials
     mtz_financial = aecom_stock.tickers['MTZ'].financials
 st.success('Extraction complete!')
-
+st.write(aecom_financial)
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
