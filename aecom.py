@@ -75,7 +75,7 @@ item = st.sidebar.selectbox('Choose item you want to compare',('Research Develop
        'Discontinued Operations', 'Net Income From Continuing Ops',
        'Net Income Applicable To Common Shares'),index=15)
 
-financial_df = get_financial(item)
+financial_df = get_financial_item(item)
 st.markdown('**{}: ${}**'.format(item,human_format(financial_df[financial_df['Company']=='AECOM'][item].values[0])))
 
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
