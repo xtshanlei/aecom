@@ -121,14 +121,14 @@ def create_headers(bearer_token): #build HEADERS
     return headers
 headers=create_headers(st.secrets['bearer_token'])
 def connect_to_endpoint(url, headers, params): #链接ENDPOINT
-    response = requests.request("GET", timeline_url, headers=headers, params=params)
+    response = requests.request("GET", url, headers=headers, params=params)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
     return response.json()
-'''user_url = 'https://api.twitter.com/2/users/19404869'
+user_url = 'https://api.twitter.com/2/users/19404869'
 user_params={'user.fields':'public_metrics'}
 user_response = connect_to_endpoint(user_url,headers=headers,params=user_params)
-st.json(user_response)'''
+st.json(user_response)
 num_follower=100
 st.sidebar.header('Twitter({} real time followers)'.format(num_follower))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
