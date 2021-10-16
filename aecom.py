@@ -127,7 +127,7 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 downloadFile('https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model')
-import import urllib.request
+import urllib.request
 topic_model_url = 'https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model'
 response = urllib.request.urlopen(topic_model_url)
 data = response.read()
