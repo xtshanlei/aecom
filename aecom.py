@@ -128,5 +128,5 @@ for tweet in timeline_response['data']:
 # Get topic dynamics
 with open('https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model', 'rb') as file:
     topic_model = BERTopic.load(file)
-topics_over_time = pd.read_csv('topics_over_time.csv')
+topics_over_time = pd.read_csv('https://raw.githubusercontent.com/xtshanlei/aecom/main/topics_over_time.csv')
 topic_model.visualize_topics_over_time(topics_over_time, top_n_topics=20, normalize_frequency=True)
