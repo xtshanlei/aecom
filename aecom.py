@@ -7,6 +7,7 @@ import pandas as pd
 import requests
 import json
 import datetime
+from bertopic import BERTopic
 st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmN3RkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7f7d7b3b40a8c8270c816aa95b02144356d3e79/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRGpJd01EQjRPVEF3WGdZNkJrVlVPZ3huY21GMmFYUjVTU0lMUTJWdWRHVnlCanNIVkRvSlkzSnZjRWtpRVRJd01EQjRPVEF3S3pBck1BWTdCMVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--0fb7870a4f06a87ce586fe2cf3dfb8c5759b4cb0/aecom.jpg',use_column_width='auto')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
@@ -125,3 +126,6 @@ for tweet in timeline_response['data']:
     st.markdown('**Retweets:**{}    **Reply:**{}    **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
     st.write('----------------------------------------')
 # Get topic dynamics
+topic_model = BERTopic.load('topic_model')
+topics_over_time = pd.read_csv('topics_over_time.csv')
+topic_model.visualize_topics_over_time(topics_over_time, top_n_topics=20, normalize_frequency=True)
