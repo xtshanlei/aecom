@@ -126,7 +126,4 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-
-from bertopic import BERTopic
-topic_model = BERTopic.load('topic_model')
-st.plotly_chart(topic_model.visualize_barchart())
+components.iframe('topic.html')
