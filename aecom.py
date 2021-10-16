@@ -33,18 +33,18 @@ aecom_stock = yf.Tickers(stock_code)
 st.subheader('Key Figures',anchor='key')
 @st.cache
 def get_financial():
-    with st.spinner('Extracting real-time financial information, please wait...'):
-        aecom_financial = aecom_stock.tickers['ACM'].financials
-        wsp_financial = aecom_stock.tickers['WSP.TO'].financials
-        snc_financial = aecom_stock.tickers['SNC.TO'].financials
-        wbd_financial = aecom_stock.tickers['WBD.MI'].financials
-        jacob_financial = aecom_stock.tickers['J'].financials
-        flr_financial = aecom_stock.tickers['FLR'].financials
-        eme_financial = aecom_stock.tickers['EME'].financials
-        mtz_financial = aecom_stock.tickers['MTZ'].financials
-        st.success('Extraction complete!')
+    aecom_financial = aecom_stock.tickers['ACM'].financials
+    wsp_financial = aecom_stock.tickers['WSP.TO'].financials
+    snc_financial = aecom_stock.tickers['SNC.TO'].financials
+    wbd_financial = aecom_stock.tickers['WBD.MI'].financials
+    jacob_financial = aecom_stock.tickers['J'].financials
+    flr_financial = aecom_stock.tickers['FLR'].financials
+    eme_financial = aecom_stock.tickers['EME'].financials
+    mtz_financial = aecom_stock.tickers['MTZ'].financials
     return aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial
-aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial = get_financial()
+with st.spinner('Extracting latest financial information, please wait...'):
+    aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial = get_financial()
+st.success('Extraction completed!')
 st.write(aecom_financial)
 
 
