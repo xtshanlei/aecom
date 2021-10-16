@@ -126,7 +126,9 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-st.subheader('TOP 6 Topics Discussed by People About AECOM')
-HtmlFile = open("topic.html", 'r', encoding='utf-8')
+st.subheader('TOP Topics Discussed on Twitter')
+
+st.subheader('Topics Change over Time')
+HtmlFile = open("dynamic_topic.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read()
 components.html(source_code,height=600)
