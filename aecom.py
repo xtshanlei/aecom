@@ -12,12 +12,12 @@ st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
 
 ##########Financial related##########
-st.header('Financials')
+st.header('Financials',anchor='financials')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
 company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
 aecom_stock = yf.Tickers(stock_code)
-st.subheader('Key Figures')
+st.subheader('Key Figures',anchor='key')
 @st.cache
 def get_financial(item):
     aecom_financial = aecom_stock.tickers['ACM'].financials
@@ -64,8 +64,8 @@ def human_format(num):
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
-st.sidebar.header('Financials')
-st.sidebar.subheader('Key Figures')
+st.sidebar.markdown('[Financials](#financials)')
+st.sidebar.markdown('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
        'Selling General Administrative', 'Gross Profit', 'Ebit',
