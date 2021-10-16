@@ -11,10 +11,11 @@ st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/represe
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
 ##########Basic Information##########
-st.header('Basic Information')
+st.header('Descriptive Information')
 st.subheader('Global Offices', anchor='office')
+st.sidebar.markdown('[Global Offices](#office)')
 office_df= pd.read_csv('aecom_offices.csv')
-st.map(office_df,zoom = 1)
+st.map(office_df)
 ##########Financial related##########
 st.header('Financials',anchor='financials')
 # Get stock ticker
