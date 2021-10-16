@@ -24,6 +24,7 @@ st.sidebar.markdown("""---""")
 office_df= pd.read_csv('aecom_offices.csv')
 st.map(office_df)
 ##########Financial related##########
+st.markdown("""---""")
 st.header('Financials',anchor='financials')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
@@ -130,6 +131,7 @@ user_params={'user.fields':'public_metrics'}
 user_response = connect_to_endpoint(user_url,headers=headers,params=user_params)
 
 st.sidebar.header('Twitter')
+st.markdown("""---""")
 st.header('Twitter')
 st.sidebar.subheader('[Public Metrics](#metrics)')
 st.subheader('Public Metrics',anchor='metrics')
