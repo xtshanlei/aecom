@@ -126,6 +126,6 @@ for tweet in timeline_response['data']:
     st.markdown('**Retweets:**{}    **Reply:**{}    **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
     st.write('----------------------------------------')
 # Get topic dynamics
-topic_model = BERTopic.load('topic_model')
+topic_model = BERTopic.load('https://github.com/xtshanlei/aecom/blob/a21a8bb4316e8559fc48b5767d0d8b971a3029a8/topic_model')
 topics_over_time = pd.read_csv('topics_over_time.csv')
 topic_model.visualize_topics_over_time(topics_over_time, top_n_topics=20, normalize_frequency=True)
