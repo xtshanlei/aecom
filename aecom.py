@@ -126,7 +126,6 @@ for tweet in timeline_response['data']:
     st.markdown('**Retweets:**{}    **Reply:**{}    **Likes: **{}'.format(tweet['public_metrics']['retweet_count'],tweet['public_metrics']['reply_count'],tweet['public_metrics']['like_count']))
     st.write('----------------------------------------')
 # Get topic dynamics
-downloadFile('https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model')
 import urllib.request
 topic_model_url = 'https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model'
 response = urllib.request.urlopen(topic_model_url)
