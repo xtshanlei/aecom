@@ -126,9 +126,11 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-st.subheader('TOP Topics Discussed on Twitter')
+st.subheader('TOP 10 Topics Discussed on Twitter')
+top_topics=pd.read_csv('top_10_topics.csv')
+top_topics_fig = px.bar(topic_topics,x='Topic Keywords', y='Count',orientation='h')
+st.plotly_chart(top_topics_fig)
 
-st.subheader('Topics Change over Time')
 HtmlFile = open("dynamic_topic.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read()
 components.html(source_code,height=600,width=1200)
