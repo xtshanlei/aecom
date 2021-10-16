@@ -127,7 +127,7 @@ for tweet in timeline_response['data']:
 # Get topic dynamics
 import streamlit.components.v1 as components
 import gdown
-topic_model_url= 'https://drive.google.com/file/d/1-2S3APQG1NBPxfdTOb81jajvGiukD6NB/view?usp=sharing'
+topic_model_url= 'https://drive.google.com/file/d/1-2S3APQG1NBPxfdTOb81jajvGiukD6NB'
 with st.spinner('Downloading trained topic_model, please wait...'):
     gdown.download(topic_model_url, 'topic_model', quiet=False)
 from bertopic import BERTopic
