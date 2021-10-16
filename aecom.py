@@ -34,6 +34,7 @@ st.subheader('Key Figures',anchor='key')
 @st.cache(suppress_st_warning=True)
 def get_financial():
     aecom_financial = aecom_stock.tickers['ACM'].financials
+    st.write(aecom_financial)
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
     wbd_financial = aecom_stock.tickers['WBD.MI'].financials
@@ -42,7 +43,7 @@ def get_financial():
     eme_financial = aecom_stock.tickers['EME'].financials
     mtz_financial = aecom_stock.tickers['MTZ'].financials
 get_financial()
-st.write(aecom_financial)
+
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
