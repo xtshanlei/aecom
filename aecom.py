@@ -128,7 +128,8 @@ for tweet in timeline_response['data']:
 import streamlit.components.v1 as components
 import gdown
 topic_model_url= 'https://drive.google.com/file/d/1-2S3APQG1NBPxfdTOb81jajvGiukD6NB/view?usp=sharing'
-gdown.download(topic_model_url, 'topic_model', quiet=False)
+with st.spinner('Downloading trained topic_model, please wait...'):
+    gdown.download(topic_model_url, 'topic_model', quiet=False)
 from bertopic import BERTopic
 topic_model = BERTopic.load('topic_model')
-st.plotly_chart(opic_model.visualize_barchart())
+st.plotly_chart(topic_model.visualize_barchart())
