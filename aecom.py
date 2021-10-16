@@ -19,7 +19,7 @@ st.sidebar.subheader('[History](#history)')
 st.write("AECOM launched when a handful of employees from design and engineering companies shared a dream of creating an industry-leading firm dedicated to delivering a better world.We became an independent company formed by the merger of five entities. While our official founding was in 1990, many of our predecessor firms had distinguished histories dating back more than 120 years.Since then, more than 50 companies have joined us and, in 2007, we became a publicly traded company on the New York Stock Exchange.")
 st.subheader('Global Offices on Map', anchor='office')
 st.sidebar.header('Descriptive Information')
-st.sidebar.markdown('[Global Offices](#office)')
+st.sidebar.subheader('[Global Offices](#office)')
 office_df= pd.read_csv('aecom_offices.csv')
 st.map(office_df)
 ##########Financial related##########
@@ -76,7 +76,7 @@ def human_format(num):
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
 st.sidebar.subheader('Financials')
-st.sidebar.markdown('[Key Figures](#key)')
+st.sidebar.subheader('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
        'Selling General Administrative', 'Gross Profit', 'Ebit',
@@ -118,7 +118,7 @@ st.plotly_chart(origin_stock_fig)
 st.sidebar.header('Twitter')
 st.header('Twitter')
 st.subheader('Recent 5 tweets:',anchor='recent_tweet')
-st.sidebar.markdown('[Recent 5 tweets](#recent_tweet)')
+st.sidebar.subheader('[Recent 5 tweets](#recent_tweet)')
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
@@ -139,12 +139,12 @@ for tweet in timeline_response['data']:
 # Get topic dynamics
 import streamlit.components.v1 as components
 st.subheader('TOP 10 Topics Discussed on Twitter Since 2020',anchor='top_topics')
-st.sidebar.markdown('[Top Topics](#top_topics)')
+st.sidebar.subheader('[Top Topics](#top_topics)')
 top_topics=pd.read_csv('top_10_topics.csv')
 top_topics_fig = px.bar(top_topics.sort_values(by='Count'),x='Count', y='Name',labels = {'x':'Count','y':'Topic with keywords'},orientation='h')
 st.plotly_chart(top_topics_fig)
 st.subheader('Topics Discussed over Time',anchor='topics_time')
-st.sidebar.markdown('[Topics Over Time](#topics_time)')
+st.sidebar.subheader('[Topics Over Time](#topics_time)')
 st.write('Explore the spikes for special events')
 HtmlFile = open("dynamic_topic.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read()
