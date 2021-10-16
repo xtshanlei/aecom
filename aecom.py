@@ -64,7 +64,7 @@ def human_format(num):
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
-st.sidebar.markdown('## Financials {: #financials }')
+st.sidebar.subheader('Financials')
 st.sidebar.markdown('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
@@ -82,7 +82,7 @@ st.markdown('**{}: ${}**'.format(item,human_format(financial_df[financial_df['Co
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
 
-st.sidebar.markdown('##[Stock Price](#stock_price)')
+st.sidebar.markdown('[Stock Price](#stock_price)')
 st.subheader('Stock Price',anchor='stock_price')
 stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'), index = 10)
 stock_price_df = aecom_stock.history(period=stock_period)
@@ -106,7 +106,8 @@ st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.header('Twitter')
 st.header('Twitter')
-st.subheader('Recent 5 tweets:')
+st.subheader('Recent 5 tweets:',anchor='recent_tweet')
+st.sidebar.markdown('[Recent 5 tweets](#recent_tweet)')
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
@@ -126,11 +127,13 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-st.subheader('TOP 10 Topics Discussed on Twitter Since 2020')
+st.subheader('TOP 10 Topics Discussed on Twitter Since 2020',anchor='top_topics')
+st.sidebar.markdown('[Top Topics](#top_topics)')
 top_topics=pd.read_csv('top_10_topics.csv')
 top_topics_fig = px.bar(top_topics.sort_values(by='Count'),x='Count', y='Name',labels = {'x':'Count','y':'Topic with keywords'},orientation='h')
 st.plotly_chart(top_topics_fig)
-st.subheader('Topics Discussed over Time')
+st.subheader('Topics Discussed over Time',anchor='topics_time')
+st.sidebar.markdown('[Topics Over Time](#topics_time)')
 st.write('Explore the spikes for special events')
 HtmlFile = open("dynamic_topic.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read()
