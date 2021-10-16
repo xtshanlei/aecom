@@ -8,10 +8,11 @@ import requests
 import json
 import datetime
 st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmN3RkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7f7d7b3b40a8c8270c816aa95b02144356d3e79/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRGpJd01EQjRPVEF3WGdZNkJrVlVPZ3huY21GMmFYUjVTU0lMUTJWdWRHVnlCanNIVkRvSlkzSnZjRWtpRVRJd01EQjRPVEF3S3pBck1BWTdCMVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--0fb7870a4f06a87ce586fe2cf3dfb8c5759b4cb0/aecom.jpg',use_column_width='auto')
-st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
+st.sidebar.write('by Yulei')
 st.title('AECOM Interactive Visualisation')
+st.write('This project is developed by Yulei for the application for the role role as Data Visualisation at AECOM.')
 ##########Basic Information##########
-st.header('Descriptive')
+st.header('About')
 st.write("AECOM launched when a handful of employees from design and engineering companies shared a dream of creating an industry-leading firm dedicated to delivering a better world.We became an independent company formed by the merger of five entities. While our official founding was in 1990, many of our predecessor firms had distinguished histories dating back more than 120 years.Since then, more than 50 companies have joined us and, in 2007, we became a publicly traded company on the New York Stock Exchange.")
 st.subheader('Global Offices on Map', anchor='office')
 st.sidebar.header('Descriptive Information')
