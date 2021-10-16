@@ -117,16 +117,18 @@ st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.markdown("""---""")
 st.sidebar.header('Twitter')
+st.sidebar.subheader('[Recent tweets](#recent_tweet)')
 st.header('Twitter')
-st.subheader('Recent 5 tweets:',anchor='recent_tweet')
-st.sidebar.subheader('[Recent 5 tweets](#recent_tweet)')
+tweet_num = st.sidebar.slider('No. of recent tweets',min_value=1,max_value=10,value=5,step=1)
+st.subheader('Recent {} tweet:'.format(tweet_num),anchor='recent_tweet')
+
 def create_headers(bearer_token): #build HEADERS
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
     return headers
 headers=create_headers(st.secrets['bearer_token'])
 #Get Twiter timeline
 timeline_url = "https://api.twitter.com/2/users/19404869/tweets"
-timeline_params ={'max_results':5, 'tweet.fields':"created_at,public_metrics"}
+timeline_params ={'max_results':tweet_num, 'tweet.fields':"created_at,public_metrics"}
 def connect_to_endpoint(url, headers, params): #链接ENDPOINT
     response = requests.request("GET", timeline_url, headers=headers, params=params)
     if response.status_code != 200:
