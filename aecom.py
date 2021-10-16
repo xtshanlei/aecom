@@ -116,7 +116,8 @@ if st.sidebar.checkbox('Include competitors'):
 st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.markdown("""---""")
-st.sidebar.header('Twitter')
+num_follower = 100
+st.sidebar.header('Twitter({} real time followers)'.format(num_follower))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
 st.header('Twitter')
 tweet_num = st.sidebar.slider('No. of recent tweets',min_value=1,max_value=10,value=5,step=1)
