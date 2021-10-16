@@ -131,7 +131,7 @@ user_response = connect_to_endpoint(user_url,headers=headers,params=user_params)
 st.json(user_response)
 st.sidebar.header('Twitter({} real time followers)'.format(num_follower))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
-st.header('Twitter({} real time followers)'.format(num_follower)')
+st.header('Twitter({} real time followers)'.format(num_follower))
 tweet_num = st.sidebar.slider('No. of recent tweets',min_value=1,max_value=10,value=5,step=1)
 st.subheader('Recent {} tweet:'.format(tweet_num),anchor='recent_tweet')
 
