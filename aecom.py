@@ -41,20 +41,7 @@ def get_financial(item):
     flr_financial = aecom_stock.tickers['FLR'].financials
     eme_financial = aecom_stock.tickers['EME'].financials
     mtz_financial = aecom_stock.tickers['MTZ'].financials
-    financial_df = pd.DataFrame()
-    financial_df['Company'] = company_ls
 
-    financial_df[item] = [aecom_financial.loc[item][0],
-                                wsp_financial.loc[item][0],
-                                snc_financial.loc[item][0],
-                                wbd_financial.loc[item][0],
-                                jacob_financial.loc[item][0],
-                                flr_financial.loc[item][0],
-                                eme_financial.loc[item][0],
-                                mtz_financial.loc[item][0]
-                                ]
-
-    return financial_df
 
 def get_financial_item(item):
     financial_df = pd.DataFrame()
