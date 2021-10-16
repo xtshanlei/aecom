@@ -1,3 +1,4 @@
 yfinance
 plotly
 scikit-learn
+git+https://github.com/MaartenGr/BERTopic.git@quickfix#egg=bertopic
