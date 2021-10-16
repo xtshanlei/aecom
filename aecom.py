@@ -140,7 +140,7 @@ st.markdown('**Following:  {}**'.format(user_response['data']['public_metrics'][
 st.markdown('**Tweet count:  {}**'.format(user_response['data']['public_metrics']['tweet_count']))
 st.markdown('**Listed count:  {}**'.format(user_response['data']['public_metrics']['listed_count']))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
-tweet_num = st.sidebar.slider('No. of recent tweets',min_value=1,max_value=10,value=5,step=1)
+tweet_num = st.sidebar.slider('Slide to choose how many recent tweets to watch below',min_value=1,max_value=10,value=5,step=1)
 st.subheader('Recent {} tweet:'.format(tweet_num),anchor='recent_tweet')
 
 #Get Twiter timeline
