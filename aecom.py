@@ -10,7 +10,9 @@ import datetime
 st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmN3RkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7f7d7b3b40a8c8270c816aa95b02144356d3e79/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRGpJd01EQjRPVEF3WGdZNkJrVlVPZ3huY21GMmFYUjVTU0lMUTJWdWRHVnlCanNIVkRvSlkzSnZjRWtpRVRJd01EQjRPVEF3S3pBck1BWTdCMVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--0fb7870a4f06a87ce586fe2cf3dfb8c5759b4cb0/aecom.jpg',use_column_width='auto')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
-
+##########Basic Information##########
+office_df= pd.read_csv('aecom_offices.csv')
+st.map(office_df)
 ##########Financial related##########
 st.header('Financials',anchor='financials')
 # Get stock ticker
