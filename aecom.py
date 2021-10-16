@@ -9,6 +9,7 @@ import json
 import datetime
 st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmN3RkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7f7d7b3b40a8c8270c816aa95b02144356d3e79/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRGpJd01EQjRPVEF3WGdZNkJrVlVPZ3huY21GMmFYUjVTU0lMUTJWdWRHVnlCanNIVkRvSlkzSnZjRWtpRVRJd01EQjRPVEF3S3pBck1BWTdCMVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--0fb7870a4f06a87ce586fe2cf3dfb8c5759b4cb0/aecom.jpg',use_column_width='auto')
 st.sidebar.write('by Yulei')
+st.sidebar.markdown("""---""")
 st.title('AECOM Interactive Visualisation')
 st.write('This project is developed by Yulei for the application for the role role as Data Visualisation at AECOM.')
 ##########Basic Information##########
@@ -114,6 +115,7 @@ if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['MTZ'], mode='lines',name='MasTec, Inc.')
 st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
+st.sidebar.markdown("""---""")
 st.sidebar.header('Twitter')
 st.header('Twitter')
 st.subheader('Recent 5 tweets:',anchor='recent_tweet')
