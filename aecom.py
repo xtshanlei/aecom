@@ -129,6 +129,7 @@ def connect_to_endpoint(url, headers, params): #链接ENDPOINT
 user_params={'user.fields':'public_metrics'}
 user_response = connect_to_endpoint(user_url,headers=headers,params=user_params)
 st.json(user_response)'''
+num_follower=100
 st.sidebar.header('Twitter({} real time followers)'.format(num_follower))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
 st.header('Twitter({} real time followers)'.format(num_follower))
