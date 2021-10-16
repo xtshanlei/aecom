@@ -32,7 +32,7 @@ company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jaco
 aecom_stock = yf.Tickers(stock_code)
 st.subheader('Key Figures',anchor='key')
 
-with st.spinner('Extracting financial information, please wait...'):
+with st.spinner('Extracting real-time financial information, please wait...'):
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
     snc_financial = aecom_stock.tickers['SNC.TO'].financials
@@ -43,6 +43,7 @@ with st.spinner('Extracting financial information, please wait...'):
     mtz_financial = aecom_stock.tickers['MTZ'].financials
 st.success('Extraction complete!')
 st.write(aecom_financial)
+
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
