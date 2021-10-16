@@ -127,7 +127,7 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import urllib.request
-topic_model_url = 'https://raw.githubusercontent.com/xtshanlei/aecom/main/topic_model'
+topic_model_url = 'https://media.githubusercontent.com/media/xtshanlei/aecom/a21a8bb4316e8559fc48b5767d0d8b971a3029a8/topic_model'
 response = urllib.request.urlopen(topic_model_url)
 data = response.read()
 topic_model = BERTopic.load(data)
