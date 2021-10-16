@@ -127,4 +127,4 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-components.iframe('https://raw.githubusercontent.com/xtshanlei/aecom/main/topic.html')
+components.iframe('topic.html')
