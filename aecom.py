@@ -20,6 +20,7 @@ st.write("AECOM launched when a handful of employees from design and engineering
 st.subheader('Global Offices on Map', anchor='office')
 st.sidebar.header('Descriptive Information')
 st.sidebar.subheader('[Global Offices](#office)')
+st.sidebar.markdown("""---""")
 office_df= pd.read_csv('aecom_offices.csv')
 st.map(office_df)
 ##########Financial related##########
@@ -74,7 +75,6 @@ def human_format(num):
         magnitude += 1
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
-st.markdown("""---""")
 st.sidebar.subheader('Financials')
 st.sidebar.subheader('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
