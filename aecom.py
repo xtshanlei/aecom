@@ -7,6 +7,7 @@ import pandas as pd
 import requests
 import json
 import datetime
+from
 st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmN3RkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7f7d7b3b40a8c8270c816aa95b02144356d3e79/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRGpJd01EQjRPVEF3WGdZNkJrVlVPZ3huY21GMmFYUjVTU0lMUTJWdWRHVnlCanNIVkRvSlkzSnZjRWtpRVRJd01EQjRPVEF3S3pBck1BWTdCMVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--0fb7870a4f06a87ce586fe2cf3dfb8c5759b4cb0/aecom.jpg',use_column_width='auto')
 st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
@@ -126,4 +127,9 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-st.DataFrame('financial.csv')
+import gdown
+topic_model_url= 'https://drive.google.com/file/d/1-2S3APQG1NBPxfdTOb81jajvGiukD6NB/view?usp=sharing'
+gdown.download(topic_model_url, 'topic_model', quiet=False)
+from bertopic import BERTopic
+topic_model = BERTopic.load('topic_model')
+st.plotly_chart(opic_model.visualize_barchart())
