@@ -93,7 +93,7 @@ st.markdown('**{}: ${}**'.format(item,human_format(financial_df[financial_df['Co
 financial_fig = px.bar(financial_df,x='Company', y=item,labels = {'x':'Companies','y':item},color='Company')
 st.plotly_chart(financial_fig)
 
-st.sidebar.markdown('[Stock Price](#stock_price)')
+st.sidebar.subheader('[Stock Price](#stock_price)')
 st.subheader('Stock Price',anchor='stock_price')
 stock_period = st.sidebar.selectbox('Please choose the period for stock prices', ('1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'), index = 10)
 stock_price_df = aecom_stock.history(period=stock_period)
