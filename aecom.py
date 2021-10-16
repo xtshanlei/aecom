@@ -140,6 +140,7 @@ for tweet in timeline_response['data']:
 # Get topic dynamics
 import streamlit.components.v1 as components
 st.subheader('TOP 10 Topics Discussed on Twitter Since 2020',anchor='top_topics')
+st.write('Topics extrated from all tweets since 2020 using state-of-the-art topic modelling.')
 st.sidebar.subheader('[Top Topics](#top_topics)')
 top_topics=pd.read_csv('top_10_topics.csv')
 top_topics_fig = px.bar(top_topics.sort_values(by='Count'),x='Count', y='Name',labels = {'x':'Count','y':'Topic with keywords'},orientation='h')
