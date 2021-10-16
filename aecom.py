@@ -64,7 +64,7 @@ def human_format(num):
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
-st.sidebar.markdown('[Financials](#financials)')
+st.sidebar.markdown('##Financials {: #financials}')
 st.sidebar.markdown('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
        'Income Before Tax', 'Minority Interest', 'Net Income',
