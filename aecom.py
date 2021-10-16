@@ -128,6 +128,7 @@ for tweet in timeline_response['data']:
 import streamlit.components.v1 as components
 st.subheader('TOP 10 Topics Discussed on Twitter')
 top_topics=pd.read_csv('top_10_topics.csv')
+st.dataframe(top_topics)
 top_topics_fig = px.bar(topic_topics,x='Count', y='Name',orientation='h')
 st.plotly_chart(top_topics_fig)
 
