@@ -128,5 +128,4 @@ for tweet in timeline_response['data']:
 import streamlit.components.v1 as components
 HtmlFile = open("topic.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read()
-st.write(source_code)
-components.iframe(source_code)
+components.html(source_code)
