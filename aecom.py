@@ -42,7 +42,6 @@ def get_financial():
     eme_financial = aecom_stock.tickers['EME'].financials
     mtz_financial = aecom_stock.tickers['MTZ'].financials
 
-
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
