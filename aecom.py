@@ -127,4 +127,4 @@ for tweet in timeline_response['data']:
     st.write('----------------------------------------')
 # Get topic dynamics
 import streamlit.components.v1 as components
-components.iframe('topic.html')
+st.DataFrame('financial.csv')
