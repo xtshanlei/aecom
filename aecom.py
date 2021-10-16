@@ -128,11 +128,16 @@ def connect_to_endpoint(url, headers, params): #链接ENDPOINT
 user_url = 'https://api.twitter.com/2/users/19404869'
 user_params={'user.fields':'public_metrics'}
 user_response = connect_to_endpoint(user_url,headers=headers,params=user_params)
-st.json(user_response)
-num_follower=100
-st.sidebar.header('Twitter({} real time followers)'.format(num_follower))
+
+st.sidebar.header('Twitter')
+st.header('Twitter')
+st.sidebar.subheader('[Public Metrics](#metrics)')
+st.subheader('Public Metrics',anchor='metrics')
+st.markdown('**Followers:**  {}'.format(user_response['data']['public_metrics']['followers_count']))
+st.markdown('**Following:**  {}'.format(user_response['data']['public_metrics']['following_count']))
+st.markdown('**Tweet count:**  {}'.format(user_response['data']['public_metrics']['tweet_count']))
+st.markdown('**Listed count:**  {}'.format(user_response['data']['public_metrics']['listed_count']))
 st.sidebar.subheader('[Recent tweets](#recent_tweet)')
-st.header('Twitter({} real time followers)'.format(num_follower))
 tweet_num = st.sidebar.slider('No. of recent tweets',min_value=1,max_value=10,value=5,step=1)
 st.subheader('Recent {} tweet:'.format(tweet_num),anchor='recent_tweet')
 
