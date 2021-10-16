@@ -74,7 +74,7 @@ def human_format(num):
         magnitude += 1
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
-
+st.markdown("""---""")
 st.sidebar.subheader('Financials')
 st.sidebar.subheader('[Key Figures](#key)')
 item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
