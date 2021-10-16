@@ -31,7 +31,7 @@ stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
 company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
 aecom_stock = yf.Tickers(stock_code)
 st.subheader('Key Figures',anchor='key')
-@st.cache
+@st.cache(suppress_st_warning=True)
 def get_financial(item):
     aecom_financial = aecom_stock.tickers['ACM'].financials
     wsp_financial = aecom_stock.tickers['WSP.TO'].financials
@@ -55,7 +55,7 @@ def get_financial(item):
                                 ]
 
     return financial_df
-    
+
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
