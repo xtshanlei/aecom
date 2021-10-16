@@ -12,7 +12,7 @@ st.sidebar.write('by Yulei for the role: Senior Data Visualisation')
 st.title('AECOM Interactive Visualisation')
 ##########Basic Information##########
 st.header('Descriptive')
-st.text("AECOM launched when a handful of employees from design and engineering companies shared a dream of creating an industry-leading firm dedicated to delivering a better world.We became an independent company formed by the merger of five entities. While our official founding was in 1990, many of our predecessor firms had distinguished histories dating back more than 120 years.Since then, more than 50 companies have joined us and, in 2007, we became a publicly traded company on the New York Stock Exchange.")
+st.write("AECOM launched when a handful of employees from design and engineering companies shared a dream of creating an industry-leading firm dedicated to delivering a better world.We became an independent company formed by the merger of five entities. While our official founding was in 1990, many of our predecessor firms had distinguished histories dating back more than 120 years.Since then, more than 50 companies have joined us and, in 2007, we became a publicly traded company on the New York Stock Exchange.")
 st.subheader('Global Offices on Map', anchor='office')
 st.sidebar.header('Descriptive Information')
 st.sidebar.markdown('[Global Offices](#office)')
