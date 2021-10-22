@@ -11,7 +11,7 @@ st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/represe
 st.sidebar.write('by Yulei')
 st.sidebar.markdown("""---""")
 st.title('AECOM Interactive Visualisation')
-st.write('This project is developed by Yulei for the application for the role role as Data Visualisation at AECOM.')
+st.write('This project is developed by Yulei for the application for the role role as Data Visualisation at AECOM. All data are available publicly including webiste, public financial API and social media data.')
 ##########Basic Information##########
 st.header('Descriptive')
 st.sidebar.header('Descriptive')
@@ -32,6 +32,7 @@ st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
 st.header('Financials',anchor='financials')
+st.markdown('**Data Source**: Real-time public financial information from Yahoo Finance')
 # Get stock ticker
 stock_code='acm WSP.TO SNC.TO WBD.MI J FLR EME MTZ'
 company_ls = ['AECOM','WSP Global Inc.','SNC-Lavalin Group Inc.','Webuild','Jacobs Engineering Group Inc.','Fluor','EMCOR Group, Inc.','MasTec, Inc.']
@@ -153,6 +154,9 @@ for tweet in timeline_response['data']:
 # Get topic dynamics
 import streamlit.components.v1 as components
 st.subheader('TOP 10 Topics Discussed on Twitter Since 2020',anchor='top_topics')
+st.markdown('**Data source**: Collected tweets mentioning AECOM')
+st.markdown('**Topic Model**: BERTopic (Utilising state-of-the-art BERT model for better interpretability than popular LDA model)')
+st.markdown('**Topic visualisation**: Plotly')
 st.write('Topics extrated from over 44K public tweets since 2020 using state-of-the-art topic modelling.')
 st.sidebar.subheader('[Top Topics](#top_topics)')
 top_topics=pd.read_csv('top_10_topics.csv')
