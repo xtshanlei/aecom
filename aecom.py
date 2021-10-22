@@ -24,7 +24,7 @@ st.subheader('{} Global Offices on Map'.format(len(office_df)), anchor='office')
 st.sidebar.subheader('[Global Head Offices](#office)')
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
-map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=100, hover_name = 'office',zoom=1, size = [10,10,10,10,10,10,10,10])
+map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=10, hover_name = 'office',zoom=1, size = [2,2,2,2,2,2,2,2])
 st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
