@@ -35,7 +35,7 @@ st.sidebar.markdown('**Tel**:{}'.format(office_df[office_df['office']==selected_
 st.sidebar.markdown('**Email**:{}'.format(office_df[office_df['office']==selected_office]['email'].values[0]))
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
-map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=20, hover_name = 'office',zoom=3, size = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1],center = {'lat':55.3781,'lon':-3.4360})
+map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=20, hover_name = 'office',zoom=3, size = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,1,1,1,1,1,1,1],center = {'lat':55.3781,'lon':-3.4360})
 st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
