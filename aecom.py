@@ -23,7 +23,7 @@ st.sidebar.subheader('[Global Head Offices](#office)')
 st.sidebar.markdown("""---""")
 office_df= pd.read_csv('aecom_offices.csv')
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
-map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=100, zoom=1)
+map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=100, hover_name = 'office',zoom=1)
 st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
