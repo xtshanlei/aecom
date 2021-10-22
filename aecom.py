@@ -30,7 +30,7 @@ st.markdown('**Visualisation**: Plotly')
 st.sidebar.subheader('[UK Offices](#office)')
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
-map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=20, hover_name = 'office',zoom=5, size = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,2,2,2,2,2,2,2,2,2,2,2],center = {'lat':55.3781,'lon':-3.4360})
+map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=20, hover_name = 'office',zoom=2, size = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,2,2,2,2,2,2,2,2,2,2,2],center = {'lat':55.3781,'lon':-3.4360})
 st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
