@@ -22,7 +22,6 @@ st.subheader('Global Offices on Map', anchor='office')
 st.sidebar.subheader('[Global Head Offices](#office)')
 st.sidebar.markdown("""---""")
 office_df= pd.read_csv('aecom_offices.csv')
-px.set_mapbox_access_token(open(".mapbox_token").read())
 map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=15, zoom=10)
 st.plotly_chart(map_fig)
 ##########Financial related##########
