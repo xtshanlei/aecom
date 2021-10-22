@@ -1,61 +1,31 @@
-﻿office,address,contact,tel,email
-"Ireland(Dublin)
- office","4th Floor, Adelphi PlazaGeorges Street UpperDun LaoghaireDublinA96 T927Ireland","Contact: Fegrus Hayes, Director",T: +353 1 238 3100,fergus.hayes@aecom.com
-"Altrincham
- office",AECOM House179 Moss LaneAltrinchamWA15 8FHUK,"Contact: Kathryn Thorp, Regional Director",T: +44 (0)161 927 8200,kathryn.thorp@aecom.com
-"Ashford
- office","3rd Floor, International HouseDover PlaceAshfordTN23 1HUUK",Contact: Jack Bull,T: 01233 658 270,jack.bull@aecom.com
-"Basingstoke
- office",MidpointAlencon LinkHampshireBasingstokeRG21 7PPUK,"Contact: Jane Sladen, Technical Director, Groundwater and Water Resources",T: +44 (1256) 310200,jane.sladen@aecom.com
-"Bedford
- office",URS HouseHorne LaneBedfordMK40 1TSUK,"Contact: Paul Gross, Associate Director",T: +44 (1234) 349641,paul.gross@aecom.com
-"Belfast
- office",9th FloorThe Clarence West Building2 Clarence Street WestBelfastBT2 7GPUK,"Contact: Julie McDowell, Regional Director",T: 028 9060 7200,julie.mcdowell@aecom.com
-"Birmingham
- office",Colmore PlazaColmore Circus QueenswayBirminghamB4 6ATUK,"Contact: Claire Parkinson, Regional Director",T: 0121 262 1900,claire.parkinson@aecom.com
-"Bristol
- office",3rd FloorPortwall PlacePortwall LaneBristolBS1 6NAUK,"Contact: John Stevens, Director",T: +44 (0)117 901 7000,john.stevens@aecom.com
-"Cambridge
- office",36 Storey’s WayCambridgeCB3 ODTUK,"Contact: Robbie Dow, Director",T: +44 (0)1223 351 258,robbie.dow@aecom.com
-"Cardiff
- office",1 Callaghan SquareCardiffCF10 5BTUK,"Contact: Richard Knott, Technical Director",T: +44 (0)2920 674600,richard.knott@aecom.com
-"Chelmsford
- office",27 Duke StreetSaxon HouseChelmsfordCM1 1HTUK,Contact: John Waterman,T: 01245 771 237,john.waterman@aecom.com
-"Chesterfield
- office",Royal CourtBasil CloseChesterfieldS41 7SLUK,Contact: Matthew Raybould,T: 01246 209221,matthew.raybould@aecom.com
-"Croydon
- office",10th FloorSunley House4 Bedford ParkCroydonCR0 2APUK,"Contact: Patrick Cox, Business Development Lead, Ground Engineering and Mining",T: 0208 639 3500,patrick.cox@aecom.com
-"Edinburgh
- office",1 TanfieldEdinburghEH3 5DAUK,"Contact: Iain Bell, Regional Director",T: +44 (0)131 301 8600,iain.bell@aecom.com
-"Exeter
- office",Belvedere HousePynes HillExeterEX2 5WSUK,"Contact: Craig Edwards, Director",T: +44 (0)1392 663200,craig.edwards@aecom.com
-"Glasgow
- office",Aurora120 Bothwell StreetGlasgowG2 7JSUK,"Contact: David Illingworth, Associate Director",T: +44 (0) 1412480300,David.Illingworth@aecom.com
-"Leeds
- office","5th Floor, 2 CitywalkLeedsLS11 9ARUK","Contact: Andy Barker, Operations Director - Environment",T: +44 (113) 391 6800,andy.barker@aecom.com
-"Liverpool
- office",Exchange Court1 Dale StreetLiverpoolL2 2ETUK,"Contact: Nigel Pilkington, Regional Director",T: +44 (0)151 331 8900,nigel.pilkington@aecom.com
-"London
- office","Aldgate Tower, 2 Leman StLondonE1 8FAUK","Contact: Steve Smith, Technical Director",T: 020 7798 5121,steve.smith02@aecom.com
-"Manchester
- office","4th Floor, Bridgewater HouseWhitworth StreetManchesterM1 6LTUK","Contact: Rick Parkman, Technical Director - EHS & Remediation Services",T: +44 (161) 907 3500,rick.parkman@aecom.com
-"Newcastle upon Tyne
- office","One Trinity GardensFirst Floor, QuaysideNewcastle upon TyneNE1 2HFUK","Contact: Paul Roberts, Regional Director",T: 0191 224 6500,paul.roberts@aecom.com
-"Norwich
- office",3 St James CourtWhitefriarsNorwichNR3 1RJUK,Contact: Paul Banks,T: 01603 953000,Paul.banks@aecom.com
-"Nottingham
- office",12 Regan WayChetwynd Business ParkChilwellNottinghamNG9 6RZUK,"Contact: Ryan Mellor, Operations Director",T: +44 (115) 907 7000,ryan.mellor@aecom.com
-"Oxford
- office","Unit 2, Avalon HouseMarcham RoadAbingdonOxfordOX14 1TZUK","Contact: Robert Spencer, Director of Sustainability",T: +44 1235 555 025,robert.spencer@aecom.com
-"Peterborough
- office",Clarence HouseMinerva Business ParkLynchwoodPeterboroughPE2 6FTUK,Contact: Paul Houghton,T: 1733 364800,paul.houghton@aecom.com
-"Southampton
- office",6th Floor2 Charlotte PlaceSouthamptonSO14 0TBUK,Contact: Martin Judd,T: 02380 333437,martin.judd@aecom.com
-"St Albans
- office",AECOM House63 - 77 Victoria StreetSt AlbansAL1 3ERUK,"Contact: Ian Willis, Regional Director",T: +44 (0)1727 535000,ian.willis@aecom.com
-"Swindon
- office",3 Newbridge SquareSwindonSN1 1BYUK,Contact: Karl Hatala,T: 01793 508500,karl.hatala@aecom.com
-"Warrington
- office","3rd Floor, 401 Faraday StreetBirchwood ParkWarringtonWA3 6GAUK",Contact: Corhyn Parr,T: 01925 858 740,corhyn.parr@aecom.com
-"York
- office",16 Toft GreenYork16 Toft GreenUK,Contact: Elaine Warley,T: 01904 652709,elaine.warley@aecom.com
+,office,address,contact,tel,email,lat,lon
+0,Ireland(Dublin),"4th Floor, Adelphi PlazaGeorges Street UpperDun LaoghaireDublinA96 T927Ireland","Contact: Fegrus Hayes, Director",T: +353 1 238 3100,fergus.hayes@aecom.com,53.29214,-6.13609
+1,Altrincham,AECOM House179 Moss LaneAltrinchamWA15 8FHUK,"Contact: Kathryn Thorp, Regional Director",T: +44 (0)161 927 8200,kathryn.thorp@aecom.com,53.3842158,-2.3378238
+2,Ashford,"3rd Floor, International HouseDover PlaceAshfordTN23 1HUUK",Contact: Jack Bull,T: 01233 658 270,jack.bull@aecom.com,51.148353576660156,0.8755630254745483
+3,Basingstoke,MidpointAlencon LinkHampshireBasingstokeRG21 7PPUK,"Contact: Jane Sladen, Technical Director, Groundwater and Water Resources",T: +44 (1256) 310200,jane.sladen@aecom.com,51.2669399,-1.0910037
+4,Bedford,URS HouseHorne LaneBedfordMK40 1TSUK,"Contact: Paul Gross, Associate Director",T: +44 (1234) 349641,paul.gross@aecom.com,52.1349983215332,-0.4699999988079071
+5,Belfast,9th FloorThe Clarence West Building2 Clarence Street WestBelfastBT2 7GPUK,"Contact: Julie McDowell, Regional Director",T: 028 9060 7200,julie.mcdowell@aecom.com,54.59416245447138,-5.930424572265873
+6,Birmingham,Colmore PlazaColmore Circus QueenswayBirminghamB4 6ATUK,"Contact: Claire Parkinson, Regional Director",T: 0121 262 1900,claire.parkinson@aecom.com,52.4838065,-1.895924
+7,Bristol,3rd FloorPortwall PlacePortwall LaneBristolBS1 6NAUK,"Contact: John Stevens, Director",T: +44 (0)117 901 7000,john.stevens@aecom.com,51.4495302,-2.5879127
+8,Cambridge,36 Storey’s WayCambridgeCB3 ODTUK,"Contact: Robbie Dow, Director",T: +44 (0)1223 351 258,robbie.dow@aecom.com,52.215395,0.098105
+9,Cardiff,1 Callaghan SquareCardiffCF10 5BTUK,"Contact: Richard Knott, Technical Director",T: +44 (0)2920 674600,richard.knott@aecom.com,51.4757559,-3.1746957
+10,Chelmsford,27 Duke StreetSaxon HouseChelmsfordCM1 1HTUK,Contact: John Waterman,T: 01245 771 237,john.waterman@aecom.com,51.7362295,0.4692125
+11,Chesterfield,Royal CourtBasil CloseChesterfieldS41 7SLUK,Contact: Matthew Raybould,T: 01246 209221,matthew.raybould@aecom.com,53.2393453,-1.4262424
+12,Croydon,10th FloorSunley House4 Bedford ParkCroydonCR0 2APUK,"Contact: Patrick Cox, Business Development Lead, Ground Engineering and Mining",T: 0208 639 3500,patrick.cox@aecom.com,51.3788637,-0.0974086
+13,Edinburgh,1 TanfieldEdinburghEH3 5DAUK,"Contact: Iain Bell, Regional Director",T: +44 (0)131 301 8600,iain.bell@aecom.com,55.9629904,-3.2019936
+14,Exeter,Belvedere HousePynes HillExeterEX2 5WSUK,"Contact: Craig Edwards, Director",T: +44 (0)1392 663200,craig.edwards@aecom.com,50.7067655,-3.4890119
+15,Glasgow,Aurora120 Bothwell StreetGlasgowG2 7JSUK,"Contact: David Illingworth, Associate Director",T: +44 (0) 1412480300,David.Illingworth@aecom.com,55.8616833,-4.2639097
+16,Leeds,"5th Floor, 2 CitywalkLeedsLS11 9ARUK","Contact: Andy Barker, Operations Director - Environment",T: +44 (113) 391 6800,andy.barker@aecom.com,53.7896786,-1.5471528
+17,Liverpool,Exchange Court1 Dale StreetLiverpoolL2 2ETUK,"Contact: Nigel Pilkington, Regional Director",T: +44 (0)151 331 8900,nigel.pilkington@aecom.com,53.4074647,-2.9911475
+18,London,"Aldgate Tower, 2 Leman StLondonE1 8FAUK","Contact: Steve Smith, Technical Director",T: 020 7798 5121,steve.smith02@aecom.com,51.513912200927734,-0.07798399776220322
+19,Manchester,"4th Floor, Bridgewater HouseWhitworth StreetManchesterM1 6LTUK","Contact: Rick Parkman, Technical Director - EHS & Remediation Services",T: +44 (161) 907 3500,rick.parkman@aecom.com,53.4752005,-2.2401617
+20,Newcastle upon Tyne,"One Trinity GardensFirst Floor, QuaysideNewcastle upon TyneNE1 2HFUK","Contact: Paul Roberts, Regional Director",T: 0191 224 6500,paul.roberts@aecom.com,54.9703464,-1.6048271
+21,Norwich,3 St James CourtWhitefriarsNorwichNR3 1RJUK,Contact: Paul Banks,T: 01603 953000,Paul.banks@aecom.com,52.6355048,1.3003907
+22,Nottingham,12 Regan WayChetwynd Business ParkChilwellNottinghamNG9 6RZUK,"Contact: Ryan Mellor, Operations Director",T: +44 (115) 907 7000,ryan.mellor@aecom.com,34.77966559290825,-111.78013349191208
+23,Oxford,"Unit 2, Avalon HouseMarcham RoadAbingdonOxfordOX14 1TZUK","Contact: Robert Spencer, Director of Sustainability",T: +44 1235 555 025,robert.spencer@aecom.com,51.6681904,-1.3061101
+24,Peterborough,Clarence HouseMinerva Business ParkLynchwoodPeterboroughPE2 6FTUK,Contact: Paul Houghton,T: 1733 364800,paul.houghton@aecom.com,52.5522157,-0.3255253
+25,Southampton,6th Floor2 Charlotte PlaceSouthamptonSO14 0TBUK,Contact: Martin Judd,T: 02380 333437,martin.judd@aecom.com,50.910458,-1.4006449
+26,St Albans,AECOM House63 - 77 Victoria StreetSt AlbansAL1 3ERUK,"Contact: Ian Willis, Regional Director",T: +44 (0)1727 535000,ian.willis@aecom.com,51.7512943,-0.3337579
+27,Swindon,3 Newbridge SquareSwindonSN1 1BYUK,Contact: Karl Hatala,T: 01793 508500,karl.hatala@aecom.com,51.5655975,-1.7860588
+28,Warrington,"3rd Floor, 401 Faraday StreetBirchwood ParkWarringtonWA3 6GAUK",Contact: Corhyn Parr,T: 01925 858 740,corhyn.parr@aecom.com,53.4253241,-2.5237478
+29,York,16 Toft GreenYork16 Toft GreenUK,Contact: Elaine Warley,T: 01904 652709,elaine.warley@aecom.com,53.9566501,-1.0905526
