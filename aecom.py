@@ -60,7 +60,9 @@ def get_financial():
 with st.spinner('Extracting latest financial information, please wait...'):
     aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial = get_financial()
 st.success('Extraction completed!')
-st.write(aecom_financial.dropna())
+format_dict = {col_name: '${:,.2f}' for col_name in aecom_financial.dropna().select_dtypes(float).columns}
+format_dict['Individual % of total'] = '{:.1%}'
+st.write(aecom_financial.dropna().style.format(format_dict))
 
 
 def get_financial_item(item):
