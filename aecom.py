@@ -66,7 +66,7 @@ st.write(aecom_financial.dropna())
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
-    financial_df[item] = [aecom_financial.dropna().loc[item][0],
+    financial_df[item] = [aecom_financial.loc[item][0],
                                 wsp_financial.loc[item][0],
                                 snc_financial.loc[item][0],
                                 wbd_financial.loc[item][0],
@@ -86,15 +86,7 @@ def human_format(num):
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 st.sidebar.subheader('Financials')
 st.sidebar.subheader('[Key Figures](#key)')
-item = st.sidebar.selectbox('Choose item you want to compare',('Research Development', 'Effect Of Accounting Charges',
-       'Income Before Tax', 'Minority Interest', 'Net Income',
-       'Selling General Administrative', 'Gross Profit', 'Ebit',
-       'Operating Income', 'Other Operating Expenses', 'Interest Expense',
-       'Extraordinary Items', 'Non Recurring', 'Other Items',
-       'Income Tax Expense', 'Total Revenue', 'Total Operating Expenses',
-       'Cost Of Revenue', 'Total Other Income Expense Net',
-       'Discontinued Operations', 'Net Income From Continuing Ops',
-       'Net Income Applicable To Common Shares'),index=15)
+item = st.sidebar.selectbox('Choose item you want to compare',(aecom_financial.dropna.index),index=4)
 
 financial_df = get_financial_item(item)
 st.markdown('**{}: ${}**'.format(item,human_format(financial_df[financial_df['Company']=='AECOM'][item].values[0])))
