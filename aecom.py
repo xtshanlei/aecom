@@ -11,7 +11,9 @@ st.sidebar.image(image='https://www.ersg-global.com/rails/active_storage/represe
 st.sidebar.write('by Yulei')
 st.sidebar.markdown("""---""")
 st.title('AECOM Interactive Visualisation')
-st.write('This project is developed by Yulei for the application for the role role as Data Visualisation at AECOM. All data are available publicly including webiste, public financial API and social media data.')
+st.write('This project is developed using Python and multiple packages by Yulei for the application for the role role as Data Visualisation at AECOM. All data are available publicly including webiste, public financial API and social media data.')
+st.markdown('**How to Use**:')
+st.write('Users can use the left panel to navigate and interact with the visualisation below. For example, choose a particular financial item to compare with competitors')
 ##########Basic Information##########
 st.header('Descriptive')
 st.sidebar.header('Descriptive')
