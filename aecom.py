@@ -27,7 +27,7 @@ st.markdown('**Visualisation**: Plotly')
 st.sidebar.subheader('[Global Head Offices](#office)')
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
-map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=10, hover_name = 'office',zoom=1, color = 'black', size = [2,2,2,2,2,2,2,2], center = {'lat':51.5147672,'lon':-0.072115})
+map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=10, hover_name = 'office',zoom=1, size = [2,2,2,2,2,2,2,2], center = {'lat':51.5147672,'lon':-0.072115})
 st.plotly_chart(map_fig)
 ##########Financial related##########
 st.markdown("""---""")
