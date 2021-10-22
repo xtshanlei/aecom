@@ -21,6 +21,7 @@ st.write("AECOM launched when a handful of employees from design and engineering
 
 office_df= pd.read_csv('aecom_offices.csv')
 st.subheader('{} Global Offices on Map'.format(len(office_df)), anchor='office')
+st.write('The data was extracted from the reginal offices information on AECOM website. I used Geopy to convert the address into latitude and longitude. The map visulisation uses scatter_mapbox of Plotly.')
 st.sidebar.subheader('[Global Head Offices](#office)')
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
