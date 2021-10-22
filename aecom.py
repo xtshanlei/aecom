@@ -66,7 +66,7 @@ st.write(aecom_financial.dropna())
 def get_financial_item(item):
     financial_df = pd.DataFrame()
     financial_df['Company'] = company_ls
-    financial_df[item] = [aecom_financial.loc[item][0],
+    financial_df[item] = [aecom_financial.dropna().loc[item][0],
                                 wsp_financial.loc[item][0],
                                 snc_financial.loc[item][0],
                                 wbd_financial.loc[item][0],
