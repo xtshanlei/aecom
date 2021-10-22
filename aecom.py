@@ -60,7 +60,7 @@ def get_financial():
 with st.spinner('Extracting latest financial information, please wait...'):
     aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial = get_financial()
 st.success('Extraction completed!')
-st.write(aecom_financial.dropna())
+st.write(aecom_financial.dropna().Index)
 
 
 def get_financial_item(item):
