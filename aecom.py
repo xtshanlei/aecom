@@ -32,6 +32,7 @@ selected_office = st.sidebar.selectbox('Please choose the office for more detail
 st.sidebar.markdown('**Address**:{}'.format(office_df[office_df['office']==selected_office]['address'].values[0]))
 st.sidebar.markdown('**Contact**:{}'.format(office_df[office_df['office']==selected_office]['contact'].values[0][8:]))
 st.sidebar.markdown('**Tel**:{}'.format(office_df[office_df['office']==selected_office]['tel'].values[0][2:]))
+st.sidebar.markdown('**Email**:{}'.format(office_df[office_df['office']==selected_office]['email'].values[0]))
 st.sidebar.markdown("""---""")
 px.set_mapbox_access_token(st.secrets['mapbox_token'])
 map_fig = px.scatter_mapbox(office_df, lat="lat", lon="lon", size_max=20, hover_name = 'office',zoom=3, size = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,2,2,2,2,2,2,2,2,2,2,2],center = {'lat':55.3781,'lon':-3.4360})
