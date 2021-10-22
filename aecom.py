@@ -60,7 +60,7 @@ def get_financial():
 with st.spinner('Extracting latest financial information, please wait...'):
     aecom_financial,wsp_financial,snc_financial,wbd_financial,jacob_financial,flr_financial,eme_financial,mtz_financial = get_financial()
 st.success('Extraction completed!')
-st.write(aecom_financial.dropna().index)
+st.write(aecom_financial.dropna())
 
 
 def get_financial_item(item):
@@ -86,7 +86,7 @@ def human_format(num):
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 st.sidebar.subheader('Financials')
 st.sidebar.subheader('[Key Figures](#key)')
-item = st.sidebar.selectbox('Choose item you want to compare',(aecom_financial.dropna().Index),index=4)
+item = st.sidebar.selectbox('Choose item you want to compare',(aecom_financial.dropna().Index.to_list()),index=4)
 
 financial_df = get_financial_item(item)
 st.markdown('**{}: ${}**'.format(item,human_format(financial_df[financial_df['Company']=='AECOM'][item].values[0])))
