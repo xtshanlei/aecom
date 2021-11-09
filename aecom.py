@@ -108,6 +108,7 @@ origin_stock_fig = px.line(stock_price_df, x=stock_price_df.index, y=stock_price
 
                  },
         )
+st.plotly_chart(origin_stock_fig)
 if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['WSP.TO'], mode='lines',name='WSP Global Inc.')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['SNC.TO'], mode='lines',name='SNC-Lavalin Group Inc.')
@@ -116,7 +117,7 @@ if st.sidebar.checkbox('Include competitors'):
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['FLR'], mode='lines',name='Fluor')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['EME'], mode='lines',name='EMCOR Group, Inc.')
     origin_stock_fig.add_scatter(x=stock_price_df.index, y=stock_price_df['Close']['MTZ'], mode='lines',name='MasTec, Inc.')
-st.plotly_chart(origin_stock_fig)
+    st.plotly_chart(origin_stock_fig)
 ##########Twitter related##########
 st.sidebar.markdown("""---""")
 def create_headers(bearer_token): #build HEADERS
